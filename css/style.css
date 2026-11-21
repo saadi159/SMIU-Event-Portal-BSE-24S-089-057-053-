@@ -201,7 +201,7 @@ a {
 
 /* ===== EVENTS PAGE ===== */
 
-<style>
+
         :root {
             --d-primary: var(--primary, #14213D);
             --d-secondary: var(--secondary, #2563EB);
@@ -292,7 +292,98 @@ a {
                 height: 220px;
             }
         }
-    </style>
-
-
     
+
+
+    /* ===== EVENT DETAILS PAGE ===== */
+
+    :root {
+            --d-primary: var(--primary, #14213D);
+            --d-secondary: var(--secondary, #2563EB);
+            --d-accent: var(--accent, #FCA311);
+            --d-border: var(--border-color, #E5E7EB);
+        }
+
+        .details-hero {
+            background: linear-gradient(135deg, #14213D, #2563EB);
+            padding: 55px 15px;
+            text-align: center;
+        }
+
+        .event-banner {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .details-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.08));
+        }
+
+        .info-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--d-border);
+        }
+
+        .info-item i {
+            color: var(--d-secondary);
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            color: var(--d-primary);
+            font-weight: bold;
+        }
+
+        .register-btn {
+            background-color: var(--d-secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--d-secondary);
+        }
+
+        .register-btn:hover {
+            background-color: var(--d-primary);
+            border-color: var(--d-primary);
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #E8F0F8;
+            color: var(--d-primary);
+        }
+
+        .other-event-link {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--d-primary);
+            border: 1px solid var(--d-border);
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .other-event-link:hover {
+            background-color: var(--d-secondary);
+            border-color: var(--d-secondary);
+            color: white;
+        }
+
+        .other-event-link.current {
+            background-color: var(--d-accent);
+            border-color: var(--d-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 576px) {
+            .event-banner {
+                height: 220px;
+            }
+        }
