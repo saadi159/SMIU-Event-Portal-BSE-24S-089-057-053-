@@ -459,6 +459,70 @@
     </div>
 </footer>
 
+<!-- JAVASCRIPT -->
+<script>
+
+/* NAVIGATION */
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("main-nav");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+/* SEARCH AND CATEGORY FILTERS */
+const filters = document.querySelectorAll(".filter-button");
+const cards = document.querySelectorAll(".society-card");
+const searchInput = document.getElementById("society-search");
+const noResults = document.getElementById("no-results");
+
+let selectedCategory = "all";
+
+function updateSocieties() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+        const category = card.dataset.category;
+        const text = card.textContent.toLowerCase();
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            selectedCategory === category;
+
+        const matchesSearch = text.includes(query);
+        const show = matchesCategory && matchesSearch;
+
+        card.hidden = !show;
+
+        if (show) visible++;
+    });
+
+    noResults.hidden = visible > 0;
+}
+
+filters.forEach(button => {
+    button.addEventListener("click", () => {
+        selectedCategory = button.dataset.filter;
+
+        filters.forEach(item => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
+        });
+
+        updateSocieties();
+    });
+});
+
+searchInput.addEventListener("input", updateSocieties);
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
 </main>
 
 </body>
