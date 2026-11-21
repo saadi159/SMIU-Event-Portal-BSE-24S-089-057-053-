@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details | SMIU Events</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --d-primary: var(--primary, #14213D);
+            --d-secondary: var(--secondary, #2563EB);
+            --d-accent: var(--accent, #FCA311);
+            --d-border: var(--border-color, #E5E7EB);
+        }
+
+        .details-hero {
+            background: linear-gradient(135deg, #14213D, #2563EB);
+            padding: 55px 15px;
+            text-align: center;
+        }
+
+        .event-banner {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .details-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.08));
+        }
+
+        .info-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--d-border);
+        }
+
+        .info-item i {
+            color: var(--d-secondary);
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            color: var(--d-primary);
+            font-weight: bold;
+        }
+
+        .register-btn {
+            background-color: var(--d-secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--d-secondary);
+        }
+
+        .register-btn:hover {
+            background-color: var(--d-primary);
+            border-color: var(--d-primary);
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #E8F0F8;
+            color: var(--d-primary);
+        }
+
+        .other-event-link {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--d-primary);
+            border: 1px solid var(--d-border);
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .other-event-link:hover {
+            background-color: var(--d-secondary);
+            border-color: var(--d-secondary);
+            color: white;
+        }
+
+        .other-event-link.current {
+            background-color: var(--d-accent);
+            border-color: var(--d-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 576px) {
+            .event-banner {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         style="background-color: var(--primary, #14213D);">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-calendar-event text-warning"></i>
+                SMIU Events
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                           href="event-details.html">Event Details</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="societies.html">Societies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- Selected event is rendered here by JavaScript -->
+    <div id="eventContainer"></div>
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+    <div class="modal fade"
+         id="registrationModal"
+         tabindex="-1"
+         aria-labelledby="registrationModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header text-white"
+                     style="background-color: var(--primary, #14213D);">
+
+                    <h5 class="modal-title text-white" id="registrationModalLabel">
+                        Event Registration
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <form action="register.html" method="get">
+
+                        <input type="hidden" name="event" id="eventNameField" value="">
+
+                        <div class="mb-3">
+                            <label for="studentName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="studentName"
+                                   name="studentName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rollNumber" class="form-label">Roll Number</label>
+                            <input type="text" class="form-control" id="rollNumber"
+                                   name="rollNumber" placeholder="Enter your roll number" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="studentEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="studentEmail"
+                                   name="studentEmail" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="studentPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="studentPhone"
+                                   name="studentPhone" placeholder="Enter phone number" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="department" class="form-label">Department</label>
+                            <select class="form-select" id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option>Computer Science</option>
+                                <option>Software Engineering</option>
+                                <option>Information Technology</option>
+                                <option>Business Administration</option>
+                                <option>Media Studies</option>
+                            </select>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                I agree to the event registration rules.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn register-btn w-100">
+                            Submit Registration
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center text-white py-4"
+        style="background-color: var(--primary, #14213D);">
+
+    <div class="container">
+
+        <h5 class="text-white">SMIU Events Portal</h5>
+
+        <p class="text-white">
+            Discover. Participate. Connect.
+        </p>
+
+        <p class="mb-0 text-white">
+            &copy; 2026 SMIU Events Portal. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // ================= EVENTS DATA =================
+    // Naya event add karna ho to bas yahan ek aur object add kar dein.
+    var events = [
+        {
+            id: 1,
+            title: "Technology Conference 2026",
+            shortName: "Technology Conference",
+            tagline: "Discover modern technologies and digital innovations.",
+            image: "images/1.jpeg",
+            alt: "Technology conference attended by students",
+            date: "23 November 2026",
+            time: "10:00 AM - 02:00 PM",
+            venue: "SMIU Main Auditorium",
+            fee: "Free",
+            category: "Technology",
+            about: [
+                "Technology Conference 2026 is an exciting university event where students can explore modern technologies, digital innovation and new developments in the IT field.",
+                "Students will have the opportunity to learn from experienced speakers, participate in discussions and connect with other technology enthusiasts."
+            ],
+            highlights: [
+                "Latest technology trends",
+                "Expert guest speakers",
+                "Interactive learning sessions",
+                "Student networking opportunities",
+                "Technology project discussions"
+            ],
+            schedule: [
+                ["10:00 AM", "Welcome and Registration"],
+                ["10:30 AM", "Opening Session"],
+                ["11:00 AM", "Main Presentation on Modern Technologies"],
+                ["12:00 PM", "Expert Panel Discussion"],
+                ["01:00 PM", "Questions and Answers"],
+                ["02:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Technology Experts",
+            speakersText: "Guest speakers will share their knowledge about software development, artificial intelligence and modern technology trends.",
+            speakers: ["Software Development Expert", "Artificial Intelligence Specialist", "IT Industry Professional"]
+        },
+        {
+            id: 2,
+            title: "Music Festival 2026",
+            shortName: "Music Festival",
+            tagline: "Enjoy live music and amazing student performances.",
+            image: "images/2.jpeg",
+            alt: "University music festival",
+            date: "24 November 2026",
+            time: "02:00 PM - 06:00 PM",
+            venue: "University Ground",
+            fee: "Free",
+            category: "Music",
+            about: [
+                "Music Festival 2026 brings the university together for an afternoon of live music, singing and performances by talented SMIU students.",
+                "Students can perform on stage, enjoy the show with friends and celebrate the creative side of university life."
+            ],
+            highlights: [
+                "Live band performances",
+                "Solo and group singing",
+                "Student talent showcase",
+                "Food and refreshment stalls",
+                "Prizes for best performances"
+            ],
+            schedule: [
+                ["02:00 PM", "Gates Open and Registration"],
+                ["02:30 PM", "Opening Performance"],
+                ["03:00 PM", "Student Bands Showcase"],
+                ["04:00 PM", "Refreshment Break"],
+                ["04:30 PM", "Guest Musician Performance"],
+                ["05:30 PM", "Prize Distribution"],
+                ["06:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Performers and Guests",
+            speakersText: "Special guests and student artists will perform and share their love for music.",
+            speakers: ["Guest Musician", "Student Bands", "Event Host"]
+        },
+        {
+            id: 3,
+            title: "Cultural Festival 2026",
+            shortName: "Cultural Festival",
+            tagline: "Celebrate traditions, diversity and cultures.",
+            image: "images/3.jpeg",
+            alt: "Cultural university celebration",
+            date: "25 November 2026",
+            time: "11:00 AM - 04:00 PM",
+            venue: "Student Hall",
+            fee: "Free",
+            category: "Culture",
+            about: [
+                "Cultural Festival 2026 is a colorful celebration of the traditions, clothing, food and art of different regions and communities at SMIU.",
+                "Students will showcase cultural performances, stalls and exhibitions while learning about each other's heritage."
+            ],
+            highlights: [
+                "Traditional dress showcase",
+                "Cultural performances",
+                "Food stalls from different regions",
+                "Art and craft exhibitions",
+                "Student participation awards"
+            ],
+            schedule: [
+                ["11:00 AM", "Welcome and Opening"],
+                ["11:30 AM", "Traditional Dress Showcase"],
+                ["12:30 PM", "Cultural Performances"],
+                ["01:30 PM", "Food Stalls and Lunch Break"],
+                ["02:30 PM", "Art and Craft Exhibition"],
+                ["03:30 PM", "Awards and Certificates"],
+                ["04:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Cultural Guests",
+            speakersText: "Invited guests will share the history and importance of cultural traditions.",
+            speakers: ["Cultural Heritage Speaker", "Folk Performers", "Student Society Representatives"]
+        },
+        {
+            id: 4,
+            title: "Academic Seminar 2026",
+            shortName: "Academic Seminar",
+            tagline: "Learn from experts and improve your knowledge.",
+            image: "images/4.jpeg",
+            alt: "Students attending an academic seminar",
+            date: "26 November 2026",
+            time: "09:00 AM - 12:00 PM",
+            venue: "Conference Room",
+            fee: "Free",
+            category: "Education",
+            about: [
+                "Academic Seminar 2026 is a learning-focused event where students can gain knowledge from experienced teachers and professionals.",
+                "The seminar covers study skills, research and academic success, with time for students to ask questions."
+            ],
+            highlights: [
+                "Expert academic talks",
+                "Study and research tips",
+                "Question and answer session",
+                "Certificates of participation",
+                "Networking with faculty"
+            ],
+            schedule: [
+                ["09:00 AM", "Welcome and Registration"],
+                ["09:30 AM", "Opening Session"],
+                ["10:00 AM", "Talk: Study Skills and Research"],
+                ["11:00 AM", "Questions and Answers"],
+                ["11:45 AM", "Certificate Distribution"],
+                ["12:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Academic Experts",
+            speakersText: "Faculty members and invited experts will guide students on academic growth and research.",
+            speakers: ["University Professor", "Research Specialist", "Academic Advisor"]
+        },
+        {
+            id: 5,
+            title: "Sports Competition 2026",
+            shortName: "Sports Competition",
+            tagline: "Participate in exciting sports competitions.",
+            image: "images/5.jpeg",
+            alt: "Students playing sports",
+            date: "27 November 2026",
+            time: "03:00 PM - 07:00 PM",
+            venue: "Sports Ground",
+            fee: "Free",
+            category: "Sports",
+            about: [
+                "Sports Competition 2026 is an energetic event where SMIU students compete in different games and show their teamwork and fitness.",
+                "Teams from different departments will play against each other for medals and the championship trophy."
+            ],
+            highlights: [
+                "Cricket and football matches",
+                "Inter-department teams",
+                "Medals and trophies",
+                "Fair play and teamwork",
+                "Cheering crowd and fun activities"
+            ],
+            schedule: [
+                ["03:00 PM", "Opening and Team Introduction"],
+                ["03:30 PM", "Cricket Matches"],
+                ["05:00 PM", "Football Matches"],
+                ["06:30 PM", "Final Matches"],
+                ["06:45 PM", "Trophy and Medal Ceremony"],
+                ["07:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Sports Guests",
+            speakersText: "Coaches and sports professionals will guide the teams and present the awards.",
+            speakers: ["Sports Coach", "Match Referee", "Chief Guest"]
+        },
+        {
+            id: 6,
+            title: "Coding Competition 2026",
+            shortName: "Coding Competition",
+            tagline: "Test your programming and problem-solving skills.",
+            image: "images/6.jpeg",
+            alt: "Students working with computers",
+            date: "28 November 2026",
+            time: "10:00 AM - 03:00 PM",
+            venue: "Computer Lab",
+            fee: "Free",
+            category: "Technology",
+            about: [
+                "Coding Competition 2026 challenges SMIU students to solve programming problems and show their logic and problem-solving skills.",
+                "Participants will compete individually or in teams within a time limit, and the best coders will win prizes."
+            ],
+            highlights: [
+                "Programming challenges",
+                "Individual and team rounds",
+                "Time-based problem solving",
+                "Prizes for top coders",
+                "Certificates for all participants"
+            ],
+            schedule: [
+                ["10:00 AM", "Registration and Lab Setup"],
+                ["10:30 AM", "Rules Briefing"],
+                ["11:00 AM", "Round 1: Problem Solving"],
+                ["12:30 PM", "Lunch Break"],
+                ["01:00 PM", "Final Round"],
+                ["02:30 PM", "Judging and Results"],
+                ["03:00 PM", "Prize Distribution"]
+            ],
+            speakersTitle: "Judges and Mentors",
+            speakersText: "Experienced developers will judge the competition and guide participants.",
+            speakers: ["Senior Software Developer", "Competitive Programming Mentor", "IT Industry Judge"]
+        },
+        {
+            id: 7,
+            title: "Student Meetup 2026",
+            shortName: "Student Meetup",
+            tagline: "Meet new people and build student connections.",
+            image: "images/7.jpeg",
+            alt: "University student gathering",
+            date: "29 November 2026",
+            time: "01:00 PM - 04:00 PM",
+            venue: "Student Center",
+            fee: "Free",
+            category: "Social",
+            about: [
+                "Student Meetup 2026 is a friendly gathering where students from all departments can meet, talk and make new friends.",
+                "The event includes games, group activities and open conversations in a relaxed environment."
+            ],
+            highlights: [
+                "Meet students from all departments",
+                "Fun games and activities",
+                "Group discussions",
+                "Refreshments",
+                "Build lasting friendships"
+            ],
+            schedule: [
+                ["01:00 PM", "Welcome and Registration"],
+                ["01:30 PM", "Icebreaker Games"],
+                ["02:15 PM", "Group Discussions"],
+                ["03:00 PM", "Refreshments"],
+                ["03:30 PM", "Open Networking"],
+                ["04:00 PM", "Closing"]
+            ],
+            speakersTitle: "Hosts and Guests",
+            speakersText: "Student leaders and society members will host the meetup and guide the activities.",
+            speakers: ["Student Society President", "Event Host", "Faculty Guest"]
+        },
+        {
+            id: 8,
+            title: "Career Guidance Workshop 2026",
+            shortName: "Career Guidance Workshop",
+            tagline: "Explore career opportunities and professional skills.",
+            image: "images/8.jpeg",
+            alt: "Guest speaker presenting at an event",
+            date: "30 November 2026",
+            time: "12:00 PM - 03:00 PM",
+            venue: "Seminar Hall",
+            fee: "Free",
+            category: "Career",
+            about: [
+                "Career Guidance Workshop 2026 helps students plan their future by learning about job opportunities and professional skills.",
+                "Industry experts will share advice on resumes, interviews and building a successful career after university."
+            ],
+            highlights: [
+                "Career planning advice",
+                "Resume and CV tips",
+                "Interview preparation",
+                "Meet industry professionals",
+                "Question and answer session"
+            ],
+            schedule: [
+                ["12:00 PM", "Welcome and Registration"],
+                ["12:20 PM", "Opening Session"],
+                ["12:30 PM", "Talk: Career Planning"],
+                ["01:15 PM", "Resume and CV Workshop"],
+                ["02:00 PM", "Interview Preparation"],
+                ["02:30 PM", "Questions and Answers"],
+                ["03:00 PM", "Closing Ceremony"]
+            ],
+            speakersTitle: "Career Experts",
+            speakersText: "Professionals from different industries will share their experience and advice.",
+            speakers: ["HR Professional", "Industry Manager", "Career Counselor"]
+        }
+    ];
+
+    // Har event ke rules (sab ke liye same)
+    var rules = [
+        "Students must bring their university ID cards.",
+        "Arrive before the event starting time.",
+        "Maintain discipline during the sessions.",
+        "Follow the instructions of event organizers.",
+        "Respect other participants."
+    ];
+
+    // ================= HELPERS =================
+    function listItems(arr) {
+        return arr.map(function (item) { return "<li>" + item + "</li>"; }).join("");
+    }
+
+    // Event ID URL se lena: event-details.html?id=3  (ya #event-3)
+    function getEventId() {
+        var params = new URLSearchParams(window.location.search);
+        var id = parseInt(params.get("id"), 10);
+
+        if (!id && window.location.hash) {
+            var match = window.location.hash.match(/event-(\d+)/);
+            if (match) { id = parseInt(match[1], 10); }
+        }
+        return id || 1;
+    }
+
+    // ================= RENDER =================
+    function renderEvent(ev) {
+        var scheduleRows = ev.schedule.map(function (row) {
+            return "<tr><td>" + row[0] + "</td><td>" + row[1] + "</td></tr>";
+        }).join("");
+
+        var otherEvents = events.map(function (e) {
+            var cls = e.id === ev.id ? "other-event-link current" : "other-event-link";
+            return '<a class="' + cls + '" href="event-details.html?id=' + e.id + '">' +
+                   '<i class="bi bi-calendar-event me-2"></i>' + e.shortName + '</a>';
+        }).join("");
+
+        var html = `
+<!-- HERO -->
+<section class="details-hero">
+    <div class="container">
+        <span class="badge text-dark mb-3" style="background-color: var(--accent, #FCA311);">
+            Featured University Event
+        </span>
+        <h1 class="display-5 fw-bold text-white">${ev.title}</h1>
+        <p class="lead text-white">${ev.tagline}</p>
+    </div>
+</section>
+
+<!-- EVENT INFORMATION -->
+<section class="container py-5">
+    <div class="row g-4 align-items-start">
+
+        <!-- IMAGE AND DESCRIPTION -->
+        <div class="col-12 col-lg-8">
+            <img src="${ev.image}" class="event-banner mb-4" alt="${ev.alt}">
+
+            <div class="details-card">
+                <h2 class="section-title mb-3">About This Event</h2>
+                ${ev.about.map(function (p) { return "<p>" + p + "</p>"; }).join("")}
+
+                <h5 class="section-title mt-4">Event Highlights</h5>
+                <ul>${listItems(ev.highlights)}</ul>
+            </div>
+        </div>
+
+        <!-- INFO CARD -->
+        <div class="col-12 col-lg-4">
+            <div class="details-card">
+                <h4 class="section-title mb-3">Event Information</h4>
+
+                <div class="info-item">
+                    <i class="bi bi-calendar-event"></i><strong>Date:</strong>
+                    <p class="ms-4 mb-0">${ev.date}</p>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-clock"></i><strong>Time:</strong>
+                    <p class="ms-4 mb-0">${ev.time}</p>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-geo-alt"></i><strong>Venue:</strong>
+                    <p class="ms-4 mb-0">${ev.venue}</p>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-cash"></i><strong>Registration Fee:</strong>
+                    <p class="ms-4 mb-0">${ev.fee}</p>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-tag"></i><strong>Category:</strong>
+                    <p class="ms-4 mb-0">${ev.category}</p>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="button" class="btn register-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registrationModal"
+                            data-event="${ev.shortName}">
+                        <i class="bi bi-pencil-square"></i> Register Now
+                    </button>
+                </div>
+
+                <a href="events.html" class="btn btn-outline-secondary w-100 mt-3">
+                    <i class="bi bi-arrow-left"></i> Back to All Events
+                </a>
+            </div>
+
+            <div class="details-card mt-4">
+                <h5 class="section-title mb-3">Other Events</h5>
+                ${otherEvents}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACCORDION -->
+<section class="container pb-5">
+    <h2 class="section-title text-center mb-4">More Event Information</h2>
+
+    <div class="accordion" id="eventAccordion">
+
+        <!-- SCHEDULE -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#schedule"
+                        aria-expanded="true" aria-controls="schedule">
+                    <i class="bi bi-calendar3 me-2"></i> Event Schedule
+                </button>
+            </h2>
+            <div id="schedule" class="accordion-collapse collapse show" data-bs-parent="#eventAccordion">
+                <div class="accordion-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr><th>Time</th><th>Activity</th></tr>
+                            </thead>
+                            <tbody>${scheduleRows}</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPEAKERS -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#speakers"
+                        aria-expanded="false" aria-controls="speakers">
+                    <i class="bi bi-mic me-2"></i> Guest Speakers
+                </button>
+            </h2>
+            <div id="speakers" class="accordion-collapse collapse" data-bs-parent="#eventAccordion">
+                <div class="accordion-body">
+                    <h5>${ev.speakersTitle}</h5>
+                    <p>${ev.speakersText}</p>
+                    <ul>${listItems(ev.speakers)}</ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- RULES -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#rules"
+                        aria-expanded="false" aria-controls="rules">
+                    <i class="bi bi-shield-check me-2"></i> Event Rules
+                </button>
+            </h2>
+            <div id="rules" class="accordion-collapse collapse" data-bs-parent="#eventAccordion">
+                <div class="accordion-body">
+                    <ul>${listItems(rules)}</ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>`;
+
+        document.getElementById("eventContainer").innerHTML = html;
+        document.title = ev.title + " | SMIU Events";
+    }
+
+    // ================= START =================
+    var currentId = getEventId();
+    var selected = events.find(function (e) { return e.id === currentId; }) || events[0];
+    renderEvent(selected);
+
+    // Registration form ko batana ke kaunsa event hai
+    document.getElementById("registrationModal").addEventListener("show.bs.modal", function (e) {
+        var btn = e.relatedTarget;
+        if (btn && btn.dataset.event) {
+            document.getElementById("eventNameField").value = btn.dataset.event;
+        }
+    });
+</script>
+
+</body>
+</html>
