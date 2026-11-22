@@ -197,3 +197,113 @@ a {
         --container-spacing: 16px;
     }
 }
+
+ 
+ /* ==========================================
+   SMIU EVENTS PORTAL - CONTACT PAGE CSS
+========================================== */
+
+/* NAVBAR */
+.contact-navbar {
+    background-color: var(--primary);
+}
+
+/* FOOTER */
+.contact-footer {
+    background-color: var(--primary);
+}
+
+/* ACCENT COLOR */
+.contact-accent,
+.contact-icon {
+    color: var(--accent);
+}
+
+/* CONTACT HERO SECTION */
+.contact-hero {
+    background: linear-gradient(135deg, #14213D, #2563EB);
+}
+
+/* CONTACT SECTION */
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* ==========================================
+   TEAM CARDS
+   (HTML uses .theme-card / .theme-image, so the
+   selectors below target those inside the team
+   columns: .col-lg-3)
+========================================== */
+
+.col-lg-3 > .theme-card {
+    overflow: hidden;
+    border-radius: 14px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col-lg-3 > .theme-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* TEAM MEMBER IMAGE: same size for every photo, face stays visible */
+.col-lg-3 > .theme-card .theme-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 0;
+}
+
+/* TEAM MEMBER TEXT */
+.col-lg-3 > .theme-card h5 {
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+.col-lg-3 > .theme-card p {
+    margin-bottom: 15px;
+}
+
+/* MAP IMAGE */
+.contact-map-image {
+    width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* CONTACT ICONS */
+.contact-icon {
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .section-padding {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .col-lg-3 > .theme-card .theme-image {
+        height: 320px;
+        object-position: center 15%;
+    }
+
+    .contact-map-image {
+        height: 240px;
+    }
+
+}
+
+ 
