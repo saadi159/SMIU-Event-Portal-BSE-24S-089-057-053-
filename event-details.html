@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Event Details | SMIU Events</title>
+    <title>Event Details | SMIU Events Portal</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,111 +11,69 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <!-- Main CSS (linked after Bootstrap) -->
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        
-    </style>
 </head>
 
 <body>
 
 <!-- ================= NAVBAR ================= -->
 <header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark"
-         style="background-color: var(--primary, #14213D);">
-
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
         <div class="container">
 
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-calendar-event text-warning"></i>
-                SMIU Events
+                SMIU <span class="site-accent">Events</span>
             </a>
 
             <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar"
-                    aria-expanded="false"
+                    data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false"
                     aria-label="Toggle navigation">
-
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
-
+            <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="events.html">Events</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                           href="event-details.html">Event Details</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="societies.html">Societies</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.html">Register</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="event-details.html">Event Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="societies.html">Societies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-
             </div>
+
         </div>
     </nav>
-
 </header>
-
 
 <main>
 
     <!-- Selected event is rendered here by JavaScript -->
     <div id="eventContainer"></div>
 
-
     <!-- ================= REGISTRATION MODAL ================= -->
-    <div class="modal fade"
-         id="registrationModal"
-         tabindex="-1"
-         aria-labelledby="registrationModalLabel"
-         aria-hidden="true">
-
+    <div class="modal fade" id="registrationModal" tabindex="-1"
+         aria-labelledby="registrationModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content">
 
-                <div class="modal-header text-white"
-                     style="background-color: var(--primary, #14213D);">
-
-                    <h5 class="modal-title text-white" id="registrationModalLabel">
-                        Event Registration
-                    </h5>
-
+                <div class="modal-header site-modal-header">
+                    <h5 class="modal-title text-white" id="registrationModalLabel">Event Registration</h5>
                     <button type="button" class="btn-close btn-close-white"
-                            data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
 
                 <div class="modal-body">
 
-                    <form action="register.html" method="get">
+                    <div id="formSuccess" class="alert alert-success d-none" role="alert">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Registration submitted successfully!
+                    </div>
+
+                    <form id="registrationForm" novalidate>
 
                         <input type="hidden" name="event" id="eventNameField" value="">
 
@@ -124,36 +81,40 @@
                             <label for="studentName" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="studentName"
                                    name="studentName" placeholder="Enter your full name" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="rollNumber" class="form-label">Roll Number</label>
                             <input type="text" class="form-control" id="rollNumber"
-                                   name="rollNumber" placeholder="Enter your roll number" required>
+                                   name="rollNumber" placeholder="BSE-24S-000" required>
+                            <div class="invalid-feedback">Please enter your roll number.</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="studentEmail" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="studentEmail"
                                    name="studentEmail" placeholder="example@email.com" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="studentPhone" class="form-label">Phone Number</label>
                             <input type="tel" class="form-control" id="studentPhone"
-                                   name="studentPhone" placeholder="Enter phone number" required>
+                                   name="studentPhone" placeholder="03XX XXXXXXX" required>
+                            <div class="invalid-feedback">Please enter your phone number.</div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="department" class="form-label">Department</label>
-                            <select class="form-select" id="department" name="department" required>
-                                <option value="">Select Department</option>
-                                <option>Computer Science</option>
+                            <label for="studentDepartment" class="form-label">Department</label>
+                            <select class="form-select" id="studentDepartment" name="studentDepartment" required>
+                                <option value="">Select department</option>
                                 <option>Software Engineering</option>
-                                <option>Information Technology</option>
+                                <option>Computer Science</option>
                                 <option>Business Administration</option>
                                 <option>Media Studies</option>
                             </select>
+                            <div class="invalid-feedback">Please select your department.</div>
                         </div>
 
                         <div class="form-check mb-3">
@@ -161,6 +122,7 @@
                             <label class="form-check-label" for="agreeTerms">
                                 I agree to the event registration rules.
                             </label>
+                            <div class="invalid-feedback">You must agree before submitting.</div>
                         </div>
 
                         <button type="submit" class="btn register-btn w-100">
@@ -168,45 +130,38 @@
                         </button>
 
                     </form>
-
                 </div>
 
             </div>
-
         </div>
-
     </div>
 
 </main>
 
-
 <!-- ================= FOOTER ================= -->
-<footer class="text-center text-white py-4"
-        style="background-color: var(--primary, #14213D);">
+<footer class="text-white py-4 site-footer">
+    <div class="container text-center">
+        <h4 class="text-white fw-bold">SMIU <span class="site-accent">Events</span></h4>
+        <p class="text-white">Connecting Students Through Events and Societies.</p>
 
-    <div class="container">
+        <div class="mb-3">
+            <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white mx-2" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
 
-        <h5 class="text-white">SMIU Events Portal</h5>
-
-        <p class="text-white">
-            Discover. Participate. Connect.
-        </p>
-
-        <p class="mb-0 text-white">
-            &copy; 2026 SMIU Events Portal. All Rights Reserved.
-        </p>
-
+        <p class="text-white">Discover. Participate. Connect.</p>
+        <hr>
+        <p class="mb-0 text-white">&copy; 2026 SMIU Events Portal. All Rights Reserved.</p>
     </div>
-
 </footer>
 
-
-<!-- Bootstrap JavaScript -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     // ================= EVENTS DATA =================
-    // Naya event add karna ho to bas yahan ek aur object add kar dein.
+    // Naya event add karna ho to bas yahan ek aur object add karein.
     var events = [
         {
             id: 1,
@@ -222,7 +177,7 @@
             category: "Technology",
             about: [
                 "Technology Conference 2026 is an exciting university event where students can explore modern technologies, digital innovation and new developments in the IT field.",
-                "Students will have the opportunity to learn from experienced speakers, participate in discussions and connect with other technology enthusiasts."
+                "Students will learn from experienced speakers, take part in discussions and connect with other technology enthusiasts."
             ],
             highlights: [
                 "Latest technology trends",
@@ -494,7 +449,7 @@
         }
     ];
 
-    // Har event ke rules (sab ke liye same)
+    // Event rules (same for every event)
     var rules = [
         "Students must bring their university ID cards.",
         "Arrive before the event starting time.",
@@ -508,20 +463,16 @@
         return arr.map(function (item) { return "<li>" + item + "</li>"; }).join("");
     }
 
-    // Event ID URL se lena: event-details.html?id=3  (ya #event-3)
+    // Read the event id from the URL: event-details.html?id=3
     function getEventId() {
         var params = new URLSearchParams(window.location.search);
-        var id = parseInt(params.get("id"), 10);
-
-        if (!id && window.location.hash) {
-            var match = window.location.hash.match(/event-(\d+)/);
-            if (match) { id = parseInt(match[1], 10); }
-        }
-        return id || 1;
+        return parseInt(params.get("id"), 10) || 1;
     }
 
     // ================= RENDER =================
     function renderEvent(ev) {
+        var aboutHtml = ev.about.map(function (p) { return "<p>" + p + "</p>"; }).join("");
+
         var scheduleRows = ev.schedule.map(function (row) {
             return "<tr><td>" + row[0] + "</td><td>" + row[1] + "</td></tr>";
         }).join("");
@@ -548,13 +499,13 @@
 <section class="container py-5">
     <div class="row g-4 align-items-start">
 
-        <!-- IMAGE AND DESCRIPTION -->
+        <!-- BANNER AND DESCRIPTION -->
         <div class="col-12 col-lg-8">
             <img src="${ev.image}" class="event-banner mb-4" alt="${ev.alt}">
 
             <div class="details-card">
                 <h2 class="section-title mb-3">About This Event</h2>
-                ${ev.about.map(function (p) { return "<p>" + p + "</p>"; }).join("")}
+                ${aboutHtml}
 
                 <h5 class="section-title mt-4">Event Highlights</h5>
                 <ul>${listItems(ev.highlights)}</ul>
@@ -606,11 +557,10 @@
                 ${otherEvents}
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- ACCORDION -->
+<!-- MORE INFORMATION: SCHEDULE / SPEAKERS / RULES -->
 <section class="container pb-5">
     <h2 class="section-title text-center mb-4">More Event Information</h2>
 
@@ -630,7 +580,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead class="table-dark">
-                                <tr><th>Time</th><th>Activity</th></tr>
+                                <tr><th scope="col">Time</th><th scope="col">Activity</th></tr>
                             </thead>
                             <tbody>${scheduleRows}</tbody>
                         </table>
@@ -677,7 +627,7 @@
 </section>`;
 
         document.getElementById("eventContainer").innerHTML = html;
-        document.title = ev.title + " | SMIU Events";
+        document.title = ev.title + " | SMIU Events Portal";
     }
 
     // ================= START =================
@@ -685,12 +635,36 @@
     var selected = events.find(function (e) { return e.id === currentId; }) || events[0];
     renderEvent(selected);
 
-    // Registration form ko batana ke kaunsa event hai
-    document.getElementById("registrationModal").addEventListener("show.bs.modal", function (e) {
+    // ================= MODAL: remember which event =================
+    var modalElement = document.getElementById("registrationModal");
+
+    modalElement.addEventListener("show.bs.modal", function (e) {
         var btn = e.relatedTarget;
         if (btn && btn.dataset.event) {
             document.getElementById("eventNameField").value = btn.dataset.event;
         }
+    });
+
+    // ================= FORM VALIDATION =================
+    var regForm = document.getElementById("registrationForm");
+    var formSuccess = document.getElementById("formSuccess");
+
+    regForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!regForm.checkValidity()) {
+            e.stopPropagation();
+            regForm.classList.add("was-validated");
+            return;
+        }
+
+        formSuccess.classList.remove("d-none");
+        setTimeout(function () {
+            regForm.reset();
+            regForm.classList.remove("was-validated");
+            formSuccess.classList.add("d-none");
+            bootstrap.Modal.getInstance(modalElement).hide();
+        }, 1500);
     });
 </script>
 
