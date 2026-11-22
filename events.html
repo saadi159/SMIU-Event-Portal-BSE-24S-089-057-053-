@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | SMIU Events Portal</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         style="background-color: var(--primary, #14213D);">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-calendar-event text-warning"></i>
+                SMIU Events
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                           href="events.html">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="event-details.html">Event Details</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="societies.html">Societies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+
+<!-- ================= PAGE HEADING ================= -->
+<section class="page-heading">
+
+    <div class="container">
+
+        <span class="badge text-dark mb-3"
+              style="background-color: var(--accent, #FCA311);">
+            Discover University Life
+        </span>
+
+        <h1 class="display-4 fw-bold text-white">
+            Explore University Events
+        </h1>
+
+        <p class="lead text-white">
+            Discover exciting events, connect with students
+            and make unforgettable memories at SMIU.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EVENT CARDS ================= -->
+<section class="event-section" id="events">
+
+    <div class="container">
+
+        <h2 class="section-heading text-center">
+            All Upcoming Events
+        </h2>
+
+        <p class="text-center mb-5">
+            Explore workshops, festivals, competitions and
+            activities happening at SMIU.
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+
+
+            <!-- EVENT 1 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/1.jpeg" class="card-img-top" alt="Technology conference">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">23 November 2026</span>
+                        <span class="badge bg-primary align-self-start mt-2">Technology</span>
+                        <h5 class="card-title mt-3">Technology Conference</h5>
+                        <p class="card-text">Discover modern technologies and digital innovations.</p>
+                        <a href="event-details.html?id=1" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 2 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/2.jpeg" class="card-img-top" alt="University music festival">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">24 November 2026</span>
+                        <span class="badge bg-success align-self-start mt-2">Music</span>
+                        <h5 class="card-title mt-3">Music Festival</h5>
+                        <p class="card-text">Enjoy live music and amazing student performances.</p>
+                        <a href="event-details.html?id=2" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 3 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/3.jpeg" class="card-img-top" alt="Cultural university celebration">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">25 November 2026</span>
+                        <span class="badge bg-warning text-dark align-self-start mt-2">Culture</span>
+                        <h5 class="card-title mt-3">Cultural Festival</h5>
+                        <p class="card-text">Celebrate traditions, diversity and cultures.</p>
+                        <a href="event-details.html?id=3" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 4 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/4.jpeg" class="card-img-top" alt="Students attending an academic seminar">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">26 November 2026</span>
+                        <span class="badge bg-info text-dark align-self-start mt-2">Education</span>
+                        <h5 class="card-title mt-3">Academic Seminar</h5>
+                        <p class="card-text">Learn from experts and improve your knowledge.</p>
+                        <a href="event-details.html?id=4" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 5 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/5.jpeg" class="card-img-top" alt="Students playing sports">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">27 November 2026</span>
+                        <span class="badge bg-danger align-self-start mt-2">Sports</span>
+                        <h5 class="card-title mt-3">Sports Competition</h5>
+                        <p class="card-text">Participate in exciting sports competitions.</p>
+                        <a href="event-details.html?id=5" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 6 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/6.jpeg" class="card-img-top" alt="Students working with computers">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">28 November 2026</span>
+                        <span class="badge bg-primary align-self-start mt-2">Technology</span>
+                        <h5 class="card-title mt-3">Coding Competition</h5>
+                        <p class="card-text">Test your programming and problem-solving skills.</p>
+                        <a href="event-details.html?id=6" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 7 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/7.jpeg" class="card-img-top" alt="University student gathering">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">29 November 2026</span>
+                        <span class="badge bg-success align-self-start mt-2">Social</span>
+                        <h5 class="card-title mt-3">Student Meetup</h5>
+                        <p class="card-text">Meet new people and build student connections.</p>
+                        <a href="event-details.html?id=7" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EVENT 8 -->
+            <div class="col">
+                <div class="card event-card theme-card shadow-sm">
+                    <img src="images/8.jpeg" class="card-img-top" alt="Guest speaker presenting at an event">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge event-date align-self-start">30 November 2026</span>
+                        <span class="badge bg-warning text-dark align-self-start mt-2">Career</span>
+                        <h5 class="card-title mt-3">Career Guidance Workshop</h5>
+                        <p class="card-text">Explore career opportunities and professional skills.</p>
+                        <a href="event-details.html?id=8" class="btn custom-btn w-100 mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= MONTHLY SCHEDULE ================= -->
+<section class="event-section bg-white">
+
+    <div class="container">
+
+        <h2 class="section-heading text-center">
+            November 2026 Event Schedule
+        </h2>
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover table-bordered align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                        <th>Category</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Technology Conference</td>
+                        <td>23 Nov 2026</td>
+                        <td>10:00 AM</td>
+                        <td>Main Auditorium</td>
+                        <td>Technology</td>
+                        <td><a href="event-details.html?id=1">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Music Festival</td>
+                        <td>24 Nov 2026</td>
+                        <td>02:00 PM</td>
+                        <td>University Ground</td>
+                        <td>Music</td>
+                        <td><a href="event-details.html?id=2">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Cultural Festival</td>
+                        <td>25 Nov 2026</td>
+                        <td>11:00 AM</td>
+                        <td>Student Hall</td>
+                        <td>Culture</td>
+                        <td><a href="event-details.html?id=3">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Academic Seminar</td>
+                        <td>26 Nov 2026</td>
+                        <td>09:00 AM</td>
+                        <td>Conference Room</td>
+                        <td>Education</td>
+                        <td><a href="event-details.html?id=4">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sports Competition</td>
+                        <td>27 Nov 2026</td>
+                        <td>03:00 PM</td>
+                        <td>Sports Ground</td>
+                        <td>Sports</td>
+                        <td><a href="event-details.html?id=5">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Coding Competition</td>
+                        <td>28 Nov 2026</td>
+                        <td>10:00 AM</td>
+                        <td>Computer Lab</td>
+                        <td>Technology</td>
+                        <td><a href="event-details.html?id=6">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Meetup</td>
+                        <td>29 Nov 2026</td>
+                        <td>01:00 PM</td>
+                        <td>Student Center</td>
+                        <td>Social</td>
+                        <td><a href="event-details.html?id=7">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>Career Guidance Workshop</td>
+                        <td>30 Nov 2026</td>
+                        <td>12:00 PM</td>
+                        <td>Seminar Hall</td>
+                        <td>Career</td>
+                        <td><a href="event-details.html?id=8">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center text-white py-4"
+        style="background-color: var(--primary, #14213D);">
+
+    <div class="container">
+
+        <h5 class="text-white">SMIU Events Portal</h5>
+
+        <p class="text-white">
+            Discover. Participate. Connect.
+        </p>
+
+        <p class="mb-0 text-white">
+            &copy; 2026 SMIU Events Portal. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
