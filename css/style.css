@@ -216,11 +216,121 @@ a {
     color: var(--accent);
 }
 
+        .info-item i {
+            color: var(--d-secondary);
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            color: var(--d-primary);
+            font-weight: bold;
+        }
+
+        .register-btn {
+            background-color: var(--d-secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--d-secondary);
+        }
+
+        .register-btn:hover {
+            background-color: var(--d-primary);
+            border-color: var(--d-primary);
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #E8F0F8;
+            color: var(--d-primary);
+        }
+
+        .other-event-link {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--d-primary);
+            border: 1px solid var(--d-border);
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .other-event-link:hover {
+            background-color: var(--d-secondary);
+            border-color: var(--d-secondary);
+            color: white;
+        }
+
+        .other-event-link.current {
+            background-color: var(--d-accent);
+            border-color: var(--d-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 576px) {
+            .event-banner {
+                height: 220px;
+            }
+        }
+    
+        /* ===== EVENTS PAGE ===== */
+.page-heading {
+    background: linear-gradient(135deg, #14213D, #2563EB);
+    color: white;
+    padding: 65px 15px;
+    text-align: center;
+}
 .main-navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+.event-section {
+    padding: 55px 0;
+}
 
+.event-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.event-date {
+    background-color: #FCA311;
+    color: #14213D;
+}
+
+.custom-btn {
+    background-color: #2563EB;
+    color: white;
+    border: 2px solid #2563EB;
+}
+
+.custom-btn:hover {
+    background-color: #14213D;
+    border-color: #14213D;
+    color: white;
+}
+
+.event-section .section-heading {
+    color: #14213D;
+    font-weight: bold;
+    margin-bottom: 30px;
 /* 2. HERO SECTION */
 .home-hero {
     background: linear-gradient(120deg, var(--primary), var(--bg-dark));
@@ -2051,4 +2161,5 @@ textarea.form-control {
     .event-banner { height: 240px; }
     .filter-bar { flex-direction: column; align-items: stretch; }
     .search-box input { width: 100%; }
+}
 }
