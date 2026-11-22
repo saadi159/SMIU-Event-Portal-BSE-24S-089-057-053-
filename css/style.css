@@ -197,3 +197,323 @@ a {
         --container-spacing: 16px;
     }
 }
+
+
+/* =====================================
+   INDEX PAGE - HOMEPAGE STYLES
+===================================== */
+
+/* 1. NAVBAR */
+.main-navbar {
+    background-color: var(--primary);
+    padding: 15px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.main-navbar .navbar-brand {
+    color: var(--text-light);
+    font-size: 22px;
+}
+
+.main-navbar .nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-left: 12px;
+    transition: var(--transition);
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
+    color: var(--accent);
+}
+
+.main-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* 2. HERO SECTION */
+.home-hero {
+    background: linear-gradient(120deg, var(--primary), var(--bg-dark));
+    color: var(--text-light);
+    padding: 80px 0;
+}
+
+.home-hero h1 {
+    color: var(--text-light);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 20px 0;
+}
+
+.home-hero h1 span {
+    color: var(--accent);
+    display: block;
+}
+
+.home-hero p {
+    color: #E2E8F0;
+    font-size: 16px;
+    max-width: 550px;
+    margin-bottom: 28px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: rgba(252, 163, 17, 0.15);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--radius-large);
+    box-shadow: var(--hover-shadow);
+}
+
+
+/* 3. FEATURED EVENTS CAROUSEL */
+.featured-image {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: var(--radius-medium);
+}
+
+#featuredCarousel .carousel-item {
+    position: relative;
+}
+
+#featuredCarousel .carousel-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        transparent 65%
+    );
+    border-radius: var(--radius-medium);
+}
+
+#featuredCarousel .carousel-caption {
+    z-index: 1;
+    bottom: 35px;
+}
+
+#featuredCarousel .carousel-caption h3 {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+#featuredCarousel .carousel-caption p {
+    color: #FFFFFF;
+}
+
+#featuredCarousel .carousel-indicators {
+    margin-bottom: 12px;
+}
+
+
+/* 4. UPCOMING EVENTS */
+.upcoming-section {
+    background-color: #EEF2F7;
+}
+
+.upcoming-section .theme-card {
+    height: 100%;
+}
+
+.event-date {
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+/* 5. WHY JOIN SECTION */
+.feature-card {
+    height: 100%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    padding: 30px 22px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--hover-shadow);
+}
+
+.feature-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--secondary);
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.feature-card h4 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+}
+
+
+/* 6. CALL TO ACTION */
+.cta-section {
+    background: linear-gradient(120deg, var(--primary), var(--bg-dark));
+    padding: 65px 0;
+}
+
+.cta-section h2 {
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    color: #E2E8F0;
+    margin-bottom: 25px;
+}
+
+
+/* 7. FOOTER */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 50px 0 20px;
+}
+
+.main-footer h5,
+.main-footer h6 {
+    color: var(--text-light);
+    margin-bottom: 18px;
+}
+
+.main-footer p {
+    color: #CBD5E1;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.main-footer a {
+    color: #CBD5E1;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.main-footer a:hover {
+    color: var(--accent);
+}
+
+.main-footer .bi {
+    margin-right: 6px;
+}
+
+.main-footer hr {
+    border-color: rgba(255, 255, 255, 0.25);
+    margin: 30px 0 20px;
+}
+
+
+/* 8. RESPONSIVE DESIGN */
+@media (max-width: 991px) {
+    .home-hero {
+        padding: 60px 0;
+    }
+
+    .home-hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-hero {
+        padding: 45px 0;
+        text-align: center;
+    }
+
+    .home-hero h1 {
+        font-size: 34px;
+    }
+
+    .home-hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .featured-image {
+        height: 320px;
+    }
+
+    #featuredCarousel .carousel-caption {
+        bottom: 25px;
+    }
+
+    #featuredCarousel .carousel-caption h3 {
+        font-size: 20px;
+    }
+
+    #featuredCarousel .carousel-caption p {
+        font-size: 13px;
+    }
+
+    .cta-section {
+        padding: 45px 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-hero h1 {
+        font-size: 29px;
+    }
+
+    .home-hero .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+
+    .featured-image {
+        height: 270px;
+    }
+
+    #featuredCarousel .carousel-caption p {
+        display: none;
+    }
+}
