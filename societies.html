@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover student societies, communities, and campus opportunities at SMIU.">
+    <title>Student Societies | SMIU Events Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-left">
+            <span class="topbar-dot"></span>
+            SINDH MADRESSATUL ISLAM UNIVERSITY
+        </div>
+        <div class="topbar-right">
+            STUDENT ENGAGEMENT PORTAL
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container nav">
+
+        <a class="logo" href="societies.html">
+            <span class="logo-symbol">SMIU</span>
+            <span class="logo-text">
+                <strong>SMIU Events Portal</strong>
+                <small>STUDENT LIFE & ENGAGEMENT</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            ☰
+        </button>
+
+        <nav class="nav-menu" id="main-nav">
+            <a class="active" href="societies.html"
+               aria-current="page">Societies</a>
+            <a href="#explore">Explore</a>
+            <a href="register.html">Registration</a>
+            <a class="nav-cta" href="register.html">
+                Join a Society <span>↗</span>
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-layout">
+
+            <div class="hero-content">
+                <span class="eyebrow">
+                    SMIU Student Communities
+                </span>
+
+                <h1>
+                    More Than<br>
+                    Academics.<br>
+                    <span>Find Your Place.</span>
+                </h1>
+
+                <p class="hero-description">
+                    University life is about the connections you make,
+                    the passions you pursue, and the experiences
+                    that shape you. Explore student societies,
+                    develop your talents, and discover where you belong.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#explore" class="btn-accent">
+                        Explore Societies <span>↗</span>
+                    </a>
+
+                    <a href="registration.html" class="btn-outline-light">
+                        Register Now <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-frame"></div>
+
+                <!-- HERO IMAGE -->
+                <img src="images/societies/community.jpeg"
+                     alt="University students collaborating on ideas"
+                     class="hero-photo"
+                     onerror="this.classList.add('is-missing')">
+
+                <div class="hero-photo-fallback">
+                    Add Entrepreneurship Society.jpg to the images folder
+                </div>
+
+                <div class="hero-caption">
+                    <span class="hero-caption-icon">✦</span>
+                    <span>
+                        <strong>Explore Your Interests</strong>
+                        <small>Discover. Connect. Participate.</small>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="feature-strip">
+        <div class="container feature-grid">
+
+            <div class="feature-item">
+                <div class="feature-icon">◎</div>
+                <div>
+                    <strong>Find Your Community</strong>
+                    <p>Connect through shared interests.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">✧</div>
+                <div>
+                    <strong>Explore New Skills</strong>
+                    <p>Learn beyond the classroom.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">↗</div>
+                <div>
+                    <strong>Make an Impact</strong>
+                    <p>Participate and contribute.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOCIETY DIRECTORY -->
+    <section class="section-padding" id="explore">
+        <div class="container">
+
+            <div class="section-intro">
+                <div>
+                    <span class="eyebrow">Campus Communities</span>
+                    <h2>Explore Student Societies</h2>
+                    <p>
+                        Discover communities built around your passions.
+                        Browse different areas of interest and find
+                        opportunities to get involved in campus life.
+                    </p>
+                </div>
+
+                <span class="section-side">
+                    DISCOVER YOUR COMMUNITY ↗
+                </span>
+            </div>
+
+            <!-- FILTER -->
+            <div class="filter-bar">
+
+                <div class="filter-buttons">
+                    <button type="button"
+                            class="filter-button active"
+                            data-filter="all"
+                            aria-pressed="true">
+                        All Societies
+                    </button>
+
+                    <button type="button"
+                            class="filter-button"
+                            data-filter="academic"
+                            aria-pressed="false">
+                        Academic
+                    </button>
+
+                    <button type="button"
+                            class="filter-button"
+                            data-filter="creative"
+                            aria-pressed="false">
+                        Creative
+                    </button>
+
+                    <button type="button"
+                            class="filter-button"
+                            data-filter="community"
+                            aria-pressed="false">
+                        Community
+                    </button>
+                </div>
+
+                <div class="search-box">
+                    <input id="society-search"
+                           type="search"
+                           aria-label="Search societies"
+                           placeholder="Search societies..."
+                           autocomplete="off">
+                </div>
+
+            </div>
+
+            <div class="society-grid">
+
+                <!-- SOCIETY 01: COMPUTING -->
+                <article class="society-card" data-category="academic">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ⌘ <small>Computing Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/technology.jpeg"
+                             alt="Students collaborating in a computer laboratory"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Academic</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 01</span>
+                        <h3>Technology & Innovation</h3>
+                        <p>
+                            Connect with students interested in
+                            technology, coding, creative solutions,
+                            and innovative projects.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Innovation & Technology</span>
+                            <a href="registration.html?society=technology">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOCIETY 02: ARTS -->
+                <article class="society-card" data-category="creative">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ✿ <small>Arts Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/arts.jpeg"
+                             alt="Students participating in a collaborative painting workshop"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Creative</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 02</span>
+                        <h3>Arts & Culture</h3>
+                        <p>
+                            Explore cultural expression, artistic
+                            collaboration, performances,
+                            and creative student activities.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Arts & Creativity</span>
+                            <a href="registration.html?society=arts">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOCIETY 03: SPORTS -->
+                <article class="society-card" data-category="community">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ⚑ <small>Sports Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/sports.jpeg"
+                             alt="Students playing sports on a university field"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Community</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 03</span>
+                        <h3>Sports & Recreation</h3>
+                        <p>
+                            Build team spirit, take part in
+                            sporting activities, and pursue
+                            a more active university life.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Sports & Wellness</span>
+                            <a href="registration.html?society=sports">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOCIETY 04: MEDIA -->
+                <article class="society-card" data-category="creative">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ◈ <small>Media Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/media.jpeg"
+                             alt="Student photographer working with a camera"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Creative</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 04</span>
+                        <h3>Media & Photography</h3>
+                        <p>
+                            Discover visual storytelling,
+                            creative content, photography,
+                            and digital media production.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Media & Storytelling</span>
+                            <a href="registration.html?society=media">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOCIETY 05: ENTREPRENEURSHIP IMAGE -->
+                <article class="society-card" data-category="community">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ♡ <small>Entrepreneurship Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/community.jpeg"
+                             alt="Students collaborating around a table"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Community</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 05</span>
+                        <h3>Community & Volunteering</h3>
+                        <p>
+                            Connect with purpose-driven
+                            students through volunteering,
+                            social initiatives, and outreach.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Community Engagement</span>
+                            <a href="registration.html?society=community">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOCIETY 06: LITERARY -->
+                <article class="society-card" data-category="academic">
+                    <div class="card-visual">
+                        <div class="image-placeholder">
+                            ❝ <small>Literary Society.jpg</small>
+                        </div>
+
+                        <img src="images/societies/debate.jpeg"
+                             alt="Students reading books together in a library"
+                             onerror="this.classList.add('is-missing')">
+
+                        <span class="category-badge">Academic</span>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-number">SOCIETY 06</span>
+                        <h3>Debate & Literature</h3>
+                        <p>
+                            Develop communication skills,
+                            share ideas, explore literature,
+                            and practise critical thinking.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>Speaking & Literature</span>
+                            <a href="registration.html?society=debate">
+                                Join Society ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div id="no-results" class="no-results" hidden>
+                No societies match your search.
+                Try a different keyword or category.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="join-section">
+        <div class="container">
+            <div class="join-panel">
+                <div>
+                    <span class="eyebrow">Your Campus Journey</span>
+                    <h2>Find a Society. Find Your People.</h2>
+                    <p>
+                        Take the next step towards a more connected,
+                        creative, and fulfilling university experience.
+                    </p>
+                </div>
+
+                <a href="registration.html" class="btn-accent">
+                    Register Your Interest ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>SMIU Events Portal</strong>
+            <p>Student Life · Societies · Engagement</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="societies.html">Societies</a>
+            <a href="registration.html">Registration</a>
+        </div>
+
+        <p>© <span id="year"></span> SMIU Events Portal</p>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* NAVIGATION */
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("main-nav");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+/* SEARCH AND CATEGORY FILTERS */
+const filters = document.querySelectorAll(".filter-button");
+const cards = document.querySelectorAll(".society-card");
+const searchInput = document.getElementById("society-search");
+const noResults = document.getElementById("no-results");
+
+let selectedCategory = "all";
+
+function updateSocieties() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+        const category = card.dataset.category;
+        const text = card.textContent.toLowerCase();
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            selectedCategory === category;
+
+        const matchesSearch = text.includes(query);
+        const show = matchesCategory && matchesSearch;
+
+        card.hidden = !show;
+
+        if (show) visible++;
+    });
+
+    noResults.hidden = visible > 0;
+}
+
+filters.forEach(button => {
+    button.addEventListener("click", () => {
+        selectedCategory = button.dataset.filter;
+
+        filters.forEach(item => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
+        });
+
+        updateSocieties();
+    });
+});
+
+searchInput.addEventListener("input", updateSocieties);
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

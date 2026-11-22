@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Register your interest in joining an SMIU student society.">
+<title>Society Registration | SMIU Events Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- EXTERNAL CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span class="topbar-dot"></span>
+      SINDH MADRESSATUL ISLAM UNIVERSITY
+    </div>
+    <div class="topbar-right">
+      STUDENT ENGAGEMENT PORTAL
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container nav">
+
+    <a href="societies.html" class="logo">
+      <span class="logo-symbol">SMIU</span>
+      <span class="logo-text">
+        <strong>SMIU Events Portal</strong>
+        <small>STUDENT LIFE & ENGAGEMENT</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-controls="main-nav"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-menu" id="main-nav">
+      <a href="societies.html">Societies</a>
+      <a class="active" href="register.html"
+         aria-current="page">Registration</a>
+      <a href="societies.html" class="nav-cta">
+        Explore Societies ↗
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container hero-content">
+
+      <span class="eyebrow">Become Part of Something</span>
+
+      <h1>
+        Society <span>Registration.</span>
+      </h1>
+
+      <p>
+        Your university journey goes beyond the classroom.
+        Take the first step towards building connections,
+        developing new skills, and exploring your interests
+        through SMIU student societies.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <div class="container breadcrumbs">
+    <a href="societies.html">Societies</a>
+    <span>›</span>
+    <span>Society Registration</span>
+  </div>
+
+  <!-- MAIN REGISTRATION -->
+  <section class="registration-section">
+    <div class="container registration-layout">
+
+      <!-- REGISTRATION FORM -->
+      <div class="registration-card">
+
+        <div class="form-header">
+          <div class="form-header-top">
+            <span class="form-label">
+              Student Registration
+            </span>
+            <span class="form-id">SMIU / SOCIETIES</span>
+          </div>
+
+          <h2>Join a Student Society</h2>
+
+          <p>
+            Please complete the form below to register
+            your interest in joining a student society.
+            All fields marked with * are required.
+          </p>
+
+          <div class="progress-header">
+            <div class="progress-step current">
+              <span class="progress-number">01</span>
+              <span>Personal Details</span>
+            </div>
+
+            <span class="progress-line"></span>
+
+            <div class="progress-step">
+              <span class="progress-number">02</span>
+              <span>Society Preference</span>
+            </div>
+
+            <span class="progress-line"></span>
+
+            <div class="progress-step">
+              <span class="progress-number">03</span>
+              <span>Review</span>
+            </div>
+          </div>
+
+        </div>
+
+        <form id="registration-form" class="form-body">
+
+          <!-- SECTION 1 -->
+          <div class="form-section">
+
+            <div class="section-title">
+              <span class="section-icon">01</span>
+              <div class="section-title-text">
+                <h3>Personal Information</h3>
+                <p>Provide your basic contact details.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="firstName">
+                  First Name <span class="required">*</span>
+                </label>
+
+                <input type="text"
+                       id="firstName"
+                       name="firstName"
+                       class="form-control"
+                       placeholder="Enter first name"
+                       autocomplete="given-name"
+                       maxlength="80"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">
+                  Last Name <span class="required">*</span>
+                </label>
+
+                <input type="text"
+                       id="lastName"
+                       name="lastName"
+                       class="form-control"
+                       placeholder="Enter last name"
+                       autocomplete="family-name"
+                       maxlength="80"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  Email Address <span class="required">*</span>
+                </label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="student@example.com"
+                       autocomplete="email"
+                       maxlength="254"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">
+                  Contact Number
+                </label>
+
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       class="form-control"
+                       placeholder="03XX XXXXXXX"
+                       autocomplete="tel"
+                       maxlength="25">
+
+                <span class="form-hint">
+                  Optional contact number
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- SECTION 2 -->
+          <div class="form-section">
+
+            <div class="section-title">
+              <span class="section-icon">02</span>
+              <div class="section-title-text">
+                <h3>Academic Information</h3>
+                <p>Tell us about your university enrollment.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="studentId">
+                  Student ID / Roll Number
+                  <span class="required">*</span>
+                </label>
+
+                <input type="text"
+                       id="studentId"
+                       name="studentId"
+                       class="form-control"
+                       placeholder="Enter your student ID"
+                       maxlength="40"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label for="semester">
+                  Current Semester
+                  <span class="required">*</span>
+                </label>
+
+                <select id="semester"
+                        name="semester"
+                        class="form-select"
+                        required>
+
+                  <option value="">Select Semester</option>
+                  <option value="1">1st Semester</option>
+                  <option value="2">2nd Semester</option>
+                  <option value="3">3rd Semester</option>
+                  <option value="4">4th Semester</option>
+                  <option value="5">5th Semester</option>
+                  <option value="6">6th Semester</option>
+                  <option value="7">7th Semester</option>
+                  <option value="8">8th Semester</option>
+                  <option value="other">Other</option>
+
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="department">
+                  Department / Program
+                  <span class="required">*</span>
+                </label>
+
+                <input type="text"
+                       id="department"
+                       name="department"
+                       class="form-control"
+                       placeholder="Enter your department or degree program"
+                       maxlength="120"
+                       required>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- SECTION 3 -->
+          <div class="form-section">
+
+            <div class="section-title">
+              <span class="section-icon">03</span>
+              <div class="section-title-text">
+                <h3>Society Preferences</h3>
+                <p>Choose the community you would like to join.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group full">
+                <label for="society">
+                  Select Your Preferred Society
+                  <span class="required">*</span>
+                </label>
+
+                <select id="society"
+                        name="society"
+                        class="form-select"
+                        required>
+
+                  <option value="">Choose a society</option>
+
+                  <option value="technology">
+                    Technology & Innovation
+                  </option>
+
+                  <option value="arts">
+                    Arts & Culture
+                  </option>
+
+                  <option value="sports">
+                    Sports & Recreation
+                  </option>
+
+                  <option value="media">
+                    Media & Photography
+                  </option>
+
+                  <option value="community">
+                    Community & Volunteering
+                  </option>
+
+                  <option value="debate">
+                    Debate & Literature
+                  </option>
+
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="motivation">
+                  Why Do You Want to Join?
+                  <span class="required">*</span>
+                </label>
+
+                <textarea id="motivation"
+                          name="motivation"
+                          class="form-control"
+                          maxlength="1000"
+                          placeholder="Share your interests, goals, and what motivates you to join this society..."
+                          required></textarea>
+
+                <span class="form-hint">
+                  Briefly explain your interest in the selected society.
+                </span>
+              </div>
+
+              <div class="form-group full">
+                <label for="experience">
+                  Relevant Skills or Experience
+                </label>
+
+                <textarea id="experience"
+                          name="experience"
+                          class="form-control"
+                          maxlength="1000"
+                          placeholder="Optional: Share any relevant skills or past activities..."></textarea>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AGREEMENT -->
+          <div class="agreement-box">
+            <label class="check-label">
+              <input type="checkbox"
+                     id="agreement"
+                     name="agreement"
+                     required>
+
+              <span>
+                I confirm that the information provided
+                is accurate and understand that this
+                demonstration form does not submit
+                or save a registration.
+                <span class="required">*</span>
+              </span>
+            </label>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="form-actions">
+
+            <button type="submit"
+                    class="btn-primary-custom">
+              Review Registration <span>↗</span>
+            </button>
+
+            <a href="societies.html" class="btn-secondary">
+              ← Back to Societies
+            </a>
+
+          </div>
+
+          <div id="form-status"
+               class="form-status"
+               role="status"
+               aria-live="polite"></div>
+
+        </form>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <!-- STEP GUIDE -->
+        <div class="sidebar-card">
+
+          <span class="sidebar-label">Registration Guide</span>
+          <h3>How to Get Started</h3>
+
+          <p>
+            Follow these steps to prepare your
+            society registration.
+          </p>
+
+          <div class="steps">
+
+            <div class="step">
+              <span class="step-number">01</span>
+              <div>
+                <strong>Explore Societies</strong>
+                <p>
+                  Discover available communities
+                  and find your area of interest.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-number">02</span>
+              <div>
+                <strong>Complete Your Details</strong>
+                <p>
+                  Enter your student and
+                  academic information accurately.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-number">03</span>
+              <div>
+                <strong>Select Your Society</strong>
+                <p>
+                  Choose your preferred society
+                  and share your motivation.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-number">04</span>
+              <div>
+                <strong>Review Information</strong>
+                <p>
+                  Check your details before
+                  completing a future live submission.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- HELP CARD -->
+        <div class="info-card">
+
+          <span class="sidebar-label">Explore Campus Life</span>
+
+          <h3>Still Exploring Your Options?</h3>
+
+          <p>
+            Browse student communities to discover
+            interests, activities, and opportunities
+            before choosing a society.
+          </p>
+
+          <a href="societies.html">
+            Browse Student Societies <span>↗</span>
+          </a>
+
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+
+    <div>
+      <strong>SMIU Events Portal</strong>
+      <p>Student Life · Societies · Engagement</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="societies.html">Societies</a>
+      <a href="registration.html">Registration</a>
+    </div>
+
+    <p>© <span id="year"></span> SMIU Events Portal</p>
+
+  </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("main-nav");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = menu.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+/* AUTOMATIC SOCIETY SELECTION */
+
+const validSocieties = new Set([
+  "technology",
+  "arts",
+  "sports",
+  "media",
+  "community",
+  "debate"
+]);
+
+const params = new URLSearchParams(window.location.search);
+const selectedSociety = params.get("society");
+
+if (validSocieties.has(selectedSociety)) {
+  document.getElementById("society").value = selectedSociety;
+}
+
+/* DEMONSTRATION VALIDATION */
+
+const form = document.getElementById("registration-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  status.textContent =
+    "Form validation completed. This page is a front-end " +
+    "demonstration. Your registration has not been " +
+    "submitted or saved. A secure backend is required " +
+    "before the form can accept real registrations.";
+
+  status.classList.add("visible");
+  status.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+});
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
