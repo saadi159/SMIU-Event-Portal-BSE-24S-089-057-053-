@@ -1,17 +1,10 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 /* =====================================
    SMIU EVENTS PORTAL - GLOBAL THEME
 ===================================== */
 
 /* 1. Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
 
 /* 2. CSS VARIABLES */
 :root {
@@ -48,7 +41,6 @@
     --transition: all 0.3s ease;
 }
 
-
 /* 3. GLOBAL RESET */
 * {
     box-sizing: border-box;
@@ -61,7 +53,6 @@ body {
     line-height: 1.6;
 }
 
-
 /* 4. GLOBAL HEADINGS */
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
@@ -71,7 +62,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: var(--text-muted);
 }
-
 
 /* 5. SECTION SPACING */
 .section-padding {
@@ -92,7 +82,6 @@ p {
     max-width: 650px;
     margin: auto;
 }
-
 
 /* 6. BUTTON THEME */
 .btn-primary-custom {
@@ -126,7 +115,6 @@ p {
     border-color: #E69500;
 }
 
-
 /* 7. CARD THEME */
 .theme-card {
     background: var(--bg-white);
@@ -142,14 +130,12 @@ p {
     box-shadow: var(--hover-shadow);
 }
 
-
 /* 8. IMAGE THEME */
 .theme-image {
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
-
 
 /* 9. BADGE THEME */
 .theme-badge {
@@ -160,7 +146,6 @@ p {
     font-size: 12px;
     font-weight: 600;
 }
-
 
 /* 10. FORM THEME */
 .form-control,
@@ -176,12 +161,10 @@ p {
     box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
-
 /* 11. LINKS */
 a {
     transition: var(--transition);
 }
-
 
 /* 12. RESPONSIVE THEME */
 @media (max-width: 768px) {
@@ -203,203 +186,101 @@ a {
         --container-spacing: 16px;
     }
 }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 
 
 /* ===== EVENTS PAGE ===== */
 
+:root {
+    --d-primary: var(--primary, #14213D);
+    --d-secondary: var(--secondary, #2563EB);
+    --d-accent: var(--accent, #FCA311);
+    --d-border: var(--border-color, #E5E7EB);
+}
 
-        :root {
-            --d-primary: var(--primary, #14213D);
-            --d-secondary: var(--secondary, #2563EB);
-            --d-accent: var(--accent, #FCA311);
-            --d-border: var(--border-color, #E5E7EB);
-        }
+.details-hero {
+    background: linear-gradient(135deg, #14213D, #2563EB);
+    padding: 55px 15px;
+    text-align: center;
+}
 
-        .details-hero {
-            background: linear-gradient(135deg, #14213D, #2563EB);
-            padding: 55px 15px;
-            text-align: center;
-        }
+.event-banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
 
-        .event-banner {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
+.details-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.08));
+}
 
-        .details-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.08));
-        }
+.info-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--d-border);
+}
 
-        .info-item {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--d-border);
-        }
+.info-item i {
+    color: var(--d-secondary);
+    font-size: 22px;
+    margin-right: 10px;
+}
 
-        .info-item i {
-            color: var(--d-secondary);
-            font-size: 22px;
-            margin-right: 10px;
-        }
+.section-title {
+    color: var(--d-primary);
+    font-weight: bold;
+}
 
-        .section-title {
-            color: var(--d-primary);
-            font-weight: bold;
-        }
+.register-btn {
+    background-color: var(--d-secondary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: 2px solid var(--d-secondary);
+}
 
-        .register-btn {
-            background-color: var(--d-secondary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            border: 2px solid var(--d-secondary);
-        }
+.register-btn:hover {
+    background-color: var(--d-primary);
+    border-color: var(--d-primary);
+    color: white;
+}
 
-        .register-btn:hover {
-            background-color: var(--d-primary);
-            border-color: var(--d-primary);
-            color: white;
-        }
+.accordion-button:not(.collapsed) {
+    background-color: #E8F0F8;
+    color: var(--d-primary);
+}
 
-        .accordion-button:not(.collapsed) {
-            background-color: #E8F0F8;
-            color: var(--d-primary);
-        }
+.other-event-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--d-primary);
+    border: 1px solid var(--d-border);
+    margin-bottom: 8px;
+    transition: 0.2s;
+}
 
-        .other-event-link {
-            display: block;
-            padding: 10px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--d-primary);
-            border: 1px solid var(--d-border);
-            margin-bottom: 8px;
-            transition: 0.2s;
-        }
+.other-event-link:hover {
+    background-color: var(--d-secondary);
+    border-color: var(--d-secondary);
+    color: white;
+}
 
-        .other-event-link:hover {
-            background-color: var(--d-secondary);
-            border-color: var(--d-secondary);
-            color: white;
-        }
+.other-event-link.current {
+    background-color: var(--d-accent);
+    border-color: var(--d-accent);
+    font-weight: bold;
+}
 
-        .other-event-link.current {
-            background-color: var(--d-accent);
-            border-color: var(--d-accent);
-            font-weight: bold;
-        }
+@media (max-width: 576px) {
+    .event-banner {
+        height: 220px;
+    }
+}
 
-        @media (max-width: 576px) {
-            .event-banner {
-                height: 220px;
-            }
-        }
-    
-
-
-    /* ===== EVENT DETAILS PAGE ===== */
-
-    :root {
-            --d-primary: var(--primary, #14213D);
-            --d-secondary: var(--secondary, #2563EB);
-            --d-accent: var(--accent, #FCA311);
-            --d-border: var(--border-color, #E5E7EB);
-        }
-
-        .details-hero {
-            background: linear-gradient(135deg, #14213D, #2563EB);
-            padding: 55px 15px;
-            text-align: center;
-        }
-
-        .event-banner {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .details-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.08));
-        }
-
-        .info-item {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--d-border);
-        }
-
-        .info-item i {
-            color: var(--d-secondary);
-            font-size: 22px;
-            margin-right: 10px;
-        }
-
-        .section-title {
-            color: var(--d-primary);
-            font-weight: bold;
-        }
-
-        .register-btn {
-            background-color: var(--d-secondary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            border: 2px solid var(--d-secondary);
-        }
-
-        .register-btn:hover {
-            background-color: var(--d-primary);
-            border-color: var(--d-primary);
-            color: white;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background-color: #E8F0F8;
-            color: var(--d-primary);
-        }
-
-        .other-event-link {
-            display: block;
-            padding: 10px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--d-primary);
-            border: 1px solid var(--d-border);
-            margin-bottom: 8px;
-            transition: 0.2s;
-        }
-
-        .other-event-link:hover {
-            background-color: var(--d-secondary);
-            border-color: var(--d-secondary);
-            color: white;
-        }
-
-        .other-event-link.current {
-            background-color: var(--d-accent);
-            border-color: var(--d-accent);
-            font-weight: bold;
-        }
-
-        @media (max-width: 576px) {
-            .event-banner {
-                height: 220px;
-            }
-        }
-=======
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
 
 /* =========================
    SMIU EVENTS PORTAL
@@ -1424,6 +1305,7 @@ p {
 
 }
 
+
 /* ==========================================
    SMIU EVENTS PORTAL
    PROFESSIONAL REGISTRATION PAGE
@@ -2425,8 +2307,3 @@ textarea.form-control {
     animation: none !important;
   }
 }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> deec3e5 (Add societies page with 6 society cards and hero section)
-=======
->>>>>>> Stashed changes
